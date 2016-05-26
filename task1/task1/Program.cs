@@ -7,22 +7,6 @@ using System.IO;
 
 namespace task1
 {
-    static class Formatting
-    {
-        public static void PrintOut(string s)
-        {
-            int i=0;
-            string[] separators = { ","," ","\n"};
-            string[] words = s.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-            while(i < words.Length)
-            {
-                //Console.WriteLine(words[i]);
-                Console.WriteLine("X:{0} Y:{1}", double.Parse(words[i]), double.Parse(words[i+1]));
-                i+=2;
-            }
-
-        }
-    }
     class Program
     {
         static void Main(string[] args)
@@ -41,19 +25,19 @@ namespace task1
                     {
                         s = Console.ReadLine();
                         if (String.IsNullOrEmpty(s) == true)
-                        { Console.WriteLine("Ну йобана :с"); Console.ReadKey(); break; }
-                        else { Formatting.PrintOut(s); }
+                        { Console.WriteLine("Нажмите любую клавишу для продолжения."); Console.ReadKey(); break; }
+                        else { Point.PrintOut(s); }
                     }
                     break;
                 case '2':
                     Console.WriteLine("Введите имя файла:");
                     s=Console.ReadLine();
                     if(File.Exists(s))
-                    {Formatting.PrintOut(File.ReadAllText(s)); Console.ReadKey(); }
-                    else { Console.WriteLine("Ну йобана :с"); Console.ReadKey(); }
+                    {Point.PrintOut(File.ReadAllText(s)); Console.ReadKey(); }
+                    else { Console.WriteLine("Нажмите любую клавишу для продолжения."); Console.ReadKey(); }
                     break;
                 default:
-                    Console.WriteLine("Ну йобана :с");
+                    Console.WriteLine("Нажмите любую клавишу для продолжения.");
                     Console.ReadKey();
                     break;
             }

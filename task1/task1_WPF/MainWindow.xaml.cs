@@ -14,11 +14,11 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 
-namespace WpfApplication1
+namespace task1_WPF
 {
     
     /// <summary>
-    /// Приложение форматирует строки по указанному формату
+    /// The application formats the input data
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -27,56 +27,25 @@ namespace WpfApplication1
             InitializeComponent();
         }
         /// <summary>
-        /// При нажатии клавиши "Ок" из текстбоксов считываются значения и передаются в метод PrintOut класса Formatting
+        /// This method formats the data entered by the user in the textbox
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void format_Click(object sender, RoutedEventArgs e)
         {
-            output.AppendText(Formatting.PrintOut(X.GetLineText(0) + "," + Y.GetLineText(0)));
-            X.Clear(); Y.Clear();
+            output.AppendText(Point.PrintOut(input.Text));
+            input.Clear();
         }
         /// <summary>
-        /// При нажатии клавиши "Ок" из текстбокса считывается имя файла и содержимое передается в метод PrintOut класса Formatting
+        /// This method formats the data from a file whose name user enters in the textbox
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button2_Click(object sender, RoutedEventArgs e)
+        private void openfile_Click(object sender, RoutedEventArgs e)
         {
-            output.AppendText(Formatting.PrintOut(File.ReadAllText(filename.Text)));            
+            output.AppendText(Point.PrintOut(File.ReadAllText(filename.Text)));            
         }
 
     }
-    /// <summary>
-    /// Класс Formatting выполняет необходимый функционал
-    /// </summary>
-    static class Formatting
-    {
-        /// <summary>
-        /// Строка result будет содержать в себе результат форматирования
-        /// </summary>
-        public static string result=String.Empty;
-        /// <summary>
-        /// Метод PrintOut форматирует входящий текст и сохраняет его в строке result
-        /// </summary>
-        /// <param name="s"></param>
-        /// <returns></returns>
-        public static string PrintOut(string s)
-        {
-            result = "";
-            int i = 0;
-            string[] separators = { ",", " ", "\n" };
-            string[] words = s.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-            
-            while (i < words.Length)
-            {
-                //Console.WriteLine(words[i]);
-                result +="X:" + double.Parse(words[i]) + " Y:" + double.Parse(words[i + 1]) + "\n";
-                i += 2;
-            }
-            return result;
-        }
-        //мы изменили этот файл. но изменений на сервере нет жеш, теперь нам надо изменения файла залить на сервер.
-        //галочка значит что он был изменен, если какой-то файл новый добавишь - то плюсик
-    }
+
 }
