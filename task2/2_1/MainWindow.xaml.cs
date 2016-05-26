@@ -28,11 +28,11 @@ namespace _2_1
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             out1.AppendText(Calculate.SqrtN(double.Parse(in1.Text), double.Parse(in2.Text), double.Parse(in3.Text)).ToString()+"\n");
-            out2.AppendText(Math.Pow(double.Parse(in1.Text), double.Parse(in2.Text)).ToString() + "\n");
+            out2.AppendText(Math.Pow(double.Parse(in1.Text), 1.0/double.Parse(in2.Text)).ToString() + "\n");
             in1.Clear(); in2.Clear(); in3.Clear();
         }
     }
-
+    
      public static class Calculate
     {
         public static double Pow(double a, int pow)
@@ -42,7 +42,7 @@ namespace _2_1
             return result;
         }
 
-        public static double SqrtN(double n, double A, double eps)
+        public static double SqrtN(double A, double n, double eps)
         {
             var x0 = A / n;
             var x1 = (1 / n) * ((n - 1) * x0 + A / Pow(x0, (int)n - 1));
