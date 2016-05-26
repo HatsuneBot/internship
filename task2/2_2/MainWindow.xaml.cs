@@ -28,7 +28,7 @@ namespace _2_2
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             output.Clear();
-            output.AppendText(Convert.ToString(int.Parse(input.Text),2));
+            output.AppendText(Bin.Converter(input.Text));
         }
     }
     
