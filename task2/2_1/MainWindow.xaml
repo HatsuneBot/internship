@@ -1,0 +1,20 @@
+﻿<Window x:Class="_2_1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Метод Ньютона" Height="450" Width="356">
+    <Grid>
+        <Label Content="Введите вычисляемое значение:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Name="in1" Height="23" Margin="214,13,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Введите степень:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Name="in2" Height="23" Margin="214,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Ок" Click="Button_Click" HorizontalAlignment="Left" Margin="138,108,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox HorizontalAlignment="Left" Name="out1" Height="239" Margin="10,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="167" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox HorizontalAlignment="Left" Name="out2" Height="239" Margin="182,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="156"/>
+        <Label Content="Вычисленное значение:"  HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top"/>
+        <Label Content="Значение Math.Pow:" HorizontalAlignment="Left" Margin="182,139,0,0" VerticalAlignment="Top"/>
+        <Label Content="Введите точность:" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Name="in3" Height="23" Margin="214,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="118" Margin="0,10,0,0" VerticalAlignment="Top" Width="348"/>
+
+    </Grid>
+</Window>

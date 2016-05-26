@@ -1,0 +1,13 @@
+﻿<Window x:Class="_2_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Конвертер" Height="183.877" Width="370.29">
+    <Grid>
+        <Label Content="Введите число:" HorizontalAlignment="Left" Margin="10,21,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Name="input" Height="28" Margin="10,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="143"/>
+        <Label Content="Двоичное представление:" HorizontalAlignment="Left" Margin="199,21,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Name="output" Height="28" Margin="199,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="154"/>
+        <Button Content="Ок" Click="Button_Click" HorizontalAlignment="Left" Margin="140,123,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>
