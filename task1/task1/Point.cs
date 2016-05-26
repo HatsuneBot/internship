@@ -6,24 +6,28 @@ using System.Threading.Tasks;
 
 namespace task1
 {
-    class Point
+    public class Point
     {
-        /// <summary>
-        /// PrintOut method formats the incoming text and displays it in the console
-        /// </summary>
-        /// <param name="s"></param>
-        public static void PrintOut(string s)
-        {
-            int i = 0;
-            string[] separators = { ",", " ", "\n" };
-            string[] words = s.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-            while (i < words.Length)
-            {
-                //Console.WriteLine(words[i]);
-                Console.WriteLine("X:{0} Y:{1}", double.Parse(words[i]), double.Parse(words[i + 1]));
-                i += 2;
-            }
+        public List<Point> point_list = new List<Point>();
+        private double X;
+        private double Y;
 
+        public void GetData(double a, double b)
+        {
+            X = a;
+            Y = b;
+            point_list.Add(this);
+        }
+
+        public override string ToString()        {
+            return string.Format("X:"+ this.X+ "\tY:"+this.Y);
+        }
+        public void SetData()
+        {
+            foreach(Point point in point_list)
+            {
+                Console.WriteLine(point_list.ToString());
+            }
         }
     }
 }
