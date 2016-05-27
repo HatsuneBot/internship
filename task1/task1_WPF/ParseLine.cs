@@ -8,14 +8,14 @@ namespace task1_WPF
 {
     class ParseLine
     {
-        public static void SplitInput(List<Point> list, string s)
+        public static void SplitInput(List<Point> list, string input)
         {
             int i = 0;
             string[] separators = { ",", " ", "\n" };
-            string[] words = s.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-            while (i < words.Length)
+            string[] splitted_input  = input.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+            while (i < splitted_input.Length)
             {
-                list.Add(new Point( double.Parse(words[i]), double.Parse(words[i + 1])));
+                list.Add(new Point( double.Parse(splitted_input[i]), double.Parse(splitted_input[i + 1])));
                 i += 2;
             }            
         }
