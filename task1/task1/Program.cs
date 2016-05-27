@@ -9,11 +9,12 @@ namespace task1
 {
     class Program
     {
-         public Point obj = new Point();
+         
         static void Main(string[] args)
         {
             char i;
             string s;
+            List<Point> point_list = new List<Point>();
             
                      
             Console.WriteLine("Выберите действие:");
@@ -28,14 +29,14 @@ namespace task1
                         s = Console.ReadLine();
                         if (String.IsNullOrEmpty(s) == true)
                         { Console.WriteLine("Нажмите любую клавишу для продолжения."); Console.ReadKey(); break; }
-                        else { ParseLine.SplitInput(s); }
+                        else { ParseLine.SplitInput(point_list,s); }
                     }          
                     break;
                 case '2':
                     Console.WriteLine("Введите имя файла:");
                     s=Console.ReadLine();
                     if(File.Exists(s))
-                    {ParseLine.SplitInput(File.ReadAllText(s)); Console.ReadKey(); }
+                    {ParseLine.SplitInput(point_list,File.ReadAllText(s)); Console.ReadKey(); }
                     else { Console.WriteLine("Нажмите любую клавишу для продолжения."); Console.ReadKey(); }
                     break;
                 default:

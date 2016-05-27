@@ -8,7 +8,7 @@ namespace task1
 {
     public static class ParseLine
     {
-        public static void SplitInput(string s)
+        public static void SplitInput(List<Point> list,string s)
         {
             int i = 0;
             string[] separators = { ",", " ", "\n" };
@@ -16,10 +16,10 @@ namespace task1
             Point obj = new Point();
             while (i < words.Length)
             {
-                obj.GetData(double.Parse(words[i]),double.Parse(words[i+1]));
+                obj.GetData(list,double.Parse(words[i]),double.Parse(words[i+1]));
                 i += 2;
             }
-            obj.SetData();
+            obj.SetData(list);
         }
     }
 }

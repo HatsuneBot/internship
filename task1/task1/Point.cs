@@ -8,26 +8,27 @@ namespace task1
 {
     public class Point
     {
-        public List<Point> point_list = new List<Point>();
-        private double X;
-        private double Y;
+        
+        private double X {get;set;}
+        private double Y{get;set;}
 
-        public void GetData(double a, double b)
+        public void GetData(List <Point> list,double a, double b)
         {
-            X = a;
-            Y = b;
-            point_list.Add(this);
+            list.Add(new Point() { X = a, Y = b });
         }
 
-        public override string ToString()        {
-            return string.Format("X:"+ this.X+ "\tY:"+this.Y);
-        }
-        public void SetData()
+        public override string ToString()
         {
-            foreach(Point point in point_list)
+            return "X:"+ X + "\tY:" + Y;
+        }
+
+        public void SetData(List<Point> list)
+        {
+            foreach(Point point in list)
             {
-                Console.WriteLine(point_list.ToString());
+                Console.WriteLine(point);
             }
         }
+
     }
 }
