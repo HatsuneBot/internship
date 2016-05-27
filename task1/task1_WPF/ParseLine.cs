@@ -13,10 +13,9 @@ namespace task1_WPF
             int i = 0;
             string[] separators = { ",", " ", "\n" };
             string[] words = s.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-            Point obj = new Point();
             while (i < words.Length)
             {
-                obj.GetData(list, double.Parse(words[i]), double.Parse(words[i + 1]));
+                list.Add(new Point( double.Parse(words[i]), double.Parse(words[i + 1])));
                 i += 2;
             }            
         }

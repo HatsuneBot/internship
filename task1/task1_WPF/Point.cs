@@ -11,9 +11,11 @@ namespace task1_WPF
         private double x;
         private double y;
 
-        public void GetData(List<Point> list, double a, double b)
+        
+        public Point (double a, double b)
         {
-            list.Add(new Point() { x = a, y = b });
+            x = a;
+            y = b;
         }
 
         public override string ToString()
