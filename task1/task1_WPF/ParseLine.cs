@@ -12,10 +12,10 @@ namespace task1_WPF
         {
             int i = 0;
             string[] separators = { ",", " ", "\n" };
-            string[] splitted_input  = input.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-            while (i < splitted_input.Length)
+            string[] splitted  = input.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+            while (i < splitted.Length)
             {
-                list.Add(new Point( double.Parse(splitted_input[i]), double.Parse(splitted_input[i + 1])));
+                list.Add(new Point( double.Parse(splitted[i]), double.Parse(splitted[i + 1])));
                 i += 2;
             }            
         }
