@@ -8,18 +8,18 @@ namespace task1
 {
     public class Point
     {
-        
-        private double X {get;set;}
-        private double Y{get;set;}
+
+        private double x;
+        private double y;
 
         public void GetData(List <Point> list,double a, double b)
         {
-            list.Add(new Point() { X = a, Y = b });
+            list.Add(new Point() { x = a, y = b });
         }
 
         public override string ToString()
         {
-            return "X:"+ X + "\tY:" + Y;
+            return "X:"+ x + "\tY:" + y;
         }
 
         public void SetData(List<Point> list)

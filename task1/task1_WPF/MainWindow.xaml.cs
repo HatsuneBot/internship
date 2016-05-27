@@ -22,9 +22,11 @@ namespace task1_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Point> point_list = new List<Point>();
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();            
+            
         }
         /// <summary>
         /// This method formats the data entered by the user in the textbox
@@ -33,7 +35,13 @@ namespace task1_WPF
         /// <param name="e"></param>
         private void format_Click(object sender, RoutedEventArgs e)
         {
-            output.AppendText(Point.PrintOut(input.Text));
+            output.Clear();
+            ParseLine.SplitInput(point_list, input.Text);
+            foreach (Point point in point_list)
+            {
+                output.AppendText(point.ToString());
+            }
+            
             input.Clear();
         }
         /// <summary>
@@ -43,7 +51,12 @@ namespace task1_WPF
         /// <param name="e"></param>
         private void openfile_Click(object sender, RoutedEventArgs e)
         {
-            output.AppendText(Point.PrintOut(File.ReadAllText(filename.Text)));            
+            output.Clear();
+            ParseLine.SplitInput(point_list, File.ReadAllText(filename.Text));
+            foreach (Point point in point_list)
+            {
+                output.AppendText(point.ToString());
+            }
         }
 
     }
