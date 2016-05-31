@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4</title>
+</head>
+<body>
+<div>4. Write a JavaScript function that returns a passed string with letters in alphabetical order.<br>
+    Example string : 'webmaster'<br>
+    Expected Output : 'abeemrstw'<br>
+    Assume punctuation and numbers symbols are not included in the passed string.</div><br>
+<input type="text" id="inStr" size= 20>
+<input type="button" onclick="ToABC()" value="Convert"><br>
+<div id="result"></div>
+<script>
+    function ToABC()
+    {
+        var inStr=document.getElementById("inStr").value;
+        document.getElementById("result").innerHTML=inStr.split('').sort().join('');
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11</title>
+</head>
+<body>
+<div>11. Write a JavaScript function which will take an array of numbers stored and find the second lowest and second greatest numbers, respectively.<br>
+    Sample array : [1,2,3,4,5]<br>
+    Expected Output : 2,4</div><br>
+<input type="text" id="inArr" size=10>
+<input type="button" onclick="Find()" value="Find"><br>
+<div id="result"></div>
+<script>
+    function Find()
+    {
+        var arr=document.getElementById("inArr").value;
+        var max1= Math.max(+arr);
+        var min1= Math.min(+arr);
+        alert(min1,max1);
+
+        //document.getElementById("result").innerHTML=min2+','+max2;
+    }
+</script>
+</body>
+</html>

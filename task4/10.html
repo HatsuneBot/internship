@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10</title>
+</head>
+<body>
+<div>10. Write a JavaScript function which returns the n rows by n columns identity matrix.</div><br>
+<span>Enter the size of the matrix: </span><br>
+<input type="text" id="size" size=10>
+<input type="button" onclick="Return()" value="Result">
+<div id="result"></div>
+<script>
+    function Return()
+    {
+        document.getElementById("result").innerHTML='';
+        var n = Number(document.getElementById("size").value);
+        for(var i=0;i<n;i++)
+        {
+            for(var y=0;y<n;y++)
+            {
+                if (i===y)
+                        document.getElementById("result").innerHTML+='1';
+                else
+                    document.getElementById("result").innerHTML+='0';
+            }
+            document.getElementById("result").innerHTML+='<br>';
+        }
+    }
+</script>
+</body>
+</html>
