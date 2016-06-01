@@ -14,12 +14,36 @@
 <script>
     function Find()
     {
-        var arr=document.getElementById("inArr").value;
-        var max1= Math.max(+arr);
-        var min1= Math.min(+arr);
-        alert(min1,max1);
-
-        //document.getElementById("result").innerHTML=min2+','+max2;
+        var arr=document.getElementById("inArr").value.split(',');
+        var max=arr[0],min=arr[0];
+        for (var i=0;i<arr.length;i++)
+        {
+            if(+max < +arr[i])
+                    max=arr[i];
+            if(+min > +arr[i])
+                    min=arr[i];
+        }
+        var min2=arr[0],max2=arr[0];
+        for (var i=0;i<+arr.length;i++)
+        {
+            if (+arr[i]=== min)
+                if ((max-max2)>(max- arr[i]))
+                        max2= arr[i];
+            else
+                {
+                    if (arr[i]===max)
+                        if((min2-min)>(arr[i]-min))
+                                min2=arr[i];
+                    else
+                    {
+                        if((min2-min)>(arr[i]-min))
+                            min2=arr[i];
+                        if ((max-max2)>(max-arr[i]))
+                            max2=arr[i];
+                    }
+                }
+        }
+        document.getElementById("result").innerHTML='min2='+min2+', max2='+max2;
     }
 </script>
 </body>
