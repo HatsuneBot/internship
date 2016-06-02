@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>16</title>
+</head>
+<body>
+<div>16. Write a JavaScript function to extract unique characters from a string.<br>
+    Example string : "thequickbrownfoxjumpsoverthelazydog"<br>
+    Expected Output : "thequickbrownfxjmpsvlazydg"</div><br>
+<input type="text" id="inStr" size=30>
+<input type="button" onclick="Extract()" value="Extract"><br>
+<div id="result"></div>
+<script>
+    function Extract(){
+        var str=document.getElementById("inStr").value;
+        for (var i=0;i<str.length;i++)
+        {
+            for (var j=i+1;j<str.length;)
+            {
+                if(str[i]==str[j])
+                        str.s;
+                else j++;
+            }
+        }
+        document.getElementById("result").innerHTML=str;
+    }
+</script>
+</body>
+</html>

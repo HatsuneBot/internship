@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>15</title>
+</head>
+<body>
+<div>15. Write a JavaScript function to compute the value of bn where n is the exponent and b is the bases. Accept b and n from the user and display the result.</div><br>
+<input type="number" id="b" size=10>
+<input type="number" id="n" size=10>
+<input type="button" onclick="Compute()" value="Compute"><br>
+<div id="result"></div>
+<script>
+    function Compute() {
+        var b=document.getElementById("b").value;
+        var n=document.getElementById("n").value;
+        document.getElementById("result").innerHTML=Math.pow(b,n);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>18</title>
+</head>
+<body>
+<div>18. Write a function for searching JavaScript arrays with a binary search.<br>
+    Note : A binary search searches by splitting an array into smaller and smaller chunks until it finds the desired value.</div><br>
+<span>Enter array:</span>
+<input type="text" id="inArr" size=20><br>
+<span>Enter desired value:</span>
+<input type="number" id="inNum">
+<input type="button" onclick="Find()" value="Find"><br>
+<div id="result"></div>
+<script>
+    function Find()
+    {
+        var t=document.getElementById("inNum").value;
+        var A=document.getElementById("inArr").value.split(',');
+        var i = 0, j = A.length-1, k;
+        while (i <= j)
+        {  k = Math.floor((i+j)/2);
+            if (t === +A[k]) break;
+            else if (t < +A[k]) j = k-1;
+            else i = k+1;
+        }
+        document.getElementById("result").innerHTML=k;
+    }
+</script>
+</body>
+</html>
