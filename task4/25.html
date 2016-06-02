@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>25</title>
+</head>
+<body>
+<div>25. Write a JavaScript function that accept a list of country names as input and returns the longest country name as output.<br>
+    Sample function : Longest_Country_Name(["Australia", "Germany", "United States of America"])<br>
+    Expected output : "United States of America"</div><br>
+<span>Enter country names:</span><br>
+<input type="text" size=50><br>
+<input type="button" onclick="Find()" value="Find">
+<div id="res"></div>
+<script>
+    function Find()
+    {
+        var arr=document.getElementsByTagName("input")[0].value.split(',');
+        document.getElementById("res").innerHTML=arr.reduce(function(lname, country)
+            {
+                return lname.length > country.length ? lname : country;
+            },
+            "");
+    }
+</script>
+</body>
+</html>

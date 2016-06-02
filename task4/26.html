@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>26</title>
+</head>
+<body>
+<div>26. Write a JavaScript function to find longest substring in a given a string without repeating characters.</div><br>
+<span>Enter string:</span><br>
+<input type="text" size="40"><br>
+<input type="button" onclick="Find()" value="Find"><br>
+<div id="res"></div>
+<script>
+    function Find()
+    {
+        var str=document.getElementsByTagName("input")[0].value;
+        var tempStr="";
+        var tempArr=[];
+        for (let i=0;i<str.length;i++)
+        {
+            for(let j=0;j<tempStr.length;j++)
+            {
+                if(str[i]===tempStr[j])
+                {
+                    tempArr.push(tempStr);
+                    tempStr= tempStr.substring(j+1,tempStr.length);
+                }
+            }
+            tempStr+=str[i];
+        }
+        var res=tempArr[0];
+        for (let i=0;i<tempArr.length;i++)
+        {
+            if(res.length<tempArr[i].length)
+                    res=tempArr[i];
+        }
+        document.getElementById("res").innerHTML=res;
+    }
+</script>
+</body>
+</html>

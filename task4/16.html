@@ -8,22 +8,23 @@
 <div>16. Write a JavaScript function to extract unique characters from a string.<br>
     Example string : "thequickbrownfoxjumpsoverthelazydog"<br>
     Expected Output : "thequickbrownfxjmpsvlazydg"</div><br>
-<input type="text" id="inStr" size=30>
+<input type="text" size=30>
 <input type="button" onclick="Extract()" value="Extract"><br>
 <div id="result"></div>
 <script>
     function Extract(){
-        var str=document.getElementById("inStr").value;
-        for (var i=0;i<str.length;i++)
+        var str=document.getElementsByTagName("input")[0].value;
+        var uniql="";
+        for (var x=0;x < str.length;x++)
         {
-            for (var j=i+1;j<str.length;)
+
+            if(uniql.indexOf(str.charAt(x))==-1)
             {
-                if(str[i]==str[j])
-                        str.s;
-                else j++;
+                uniql += str[x];
+
             }
         }
-        document.getElementById("result").innerHTML=str;
+        document.getElementById("result").innerHTML=uniql;
     }
 </script>
 </body>

@@ -6,14 +6,27 @@
 </head>
 <body>
 <div>13. Write a JavaScript function to compute the factors of a positive integer.</div><br>
-<input type="text" id="inNum" size=10>
+<input type="number" size=10>
 <input type="button" onclick="Compute()" value="Compute"><br>
 <div id="result"></div>
 <script>
     function Compute()
     {
-        var num=Number(document.getElementById("inNum").value);
+        var num=document.getElementsByTagName("input")[0].value;
+        var num_factors = [], i;
 
+        for (i = 1; i <= Math.floor(Math.sqrt(num)); i++)
+            if (num % i === 0)
+            {
+                num_factors.push(i);
+                if (num / i !== i)
+                    num_factors.push(num / i);
+            }
+        num_factors.sort(function(x, y)
+        {
+            return x - y;
+        });
+        document.getElementById("result").innerHTML=num_factors;
     }
 </script>
 </body>

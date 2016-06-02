@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>29</title>
+</head>
+<body>
+<div>29. Write a JavaScript function to get the function name.</div><br>
+<input type="button" onclick="SomeName()" value="Get name"><br>
+<script>
+    function SomeName()
+    {
+        alert(arguments.callee.name);
+    }
+</script>
+</body>
+</html>

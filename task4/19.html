@@ -7,19 +7,20 @@
 <body>
 <div>19. Write a JavaScript function that returns array elements larger than a number.</div><br>
 <span>Enter array:</span>
-<input type="text" size=10><br>
+<input type="text" size=50><br>
 <span>Enter number:</span>
-<input type="number" size=5><br>
+<input type="number"><br>
 <input type="button" onclick="Return()" value="Return"><br>
 <div id="result"></div>
 <script>
     function Return() {
-        var arr=document.getElementsByTagName("input")[0].value.split(',');
-        var num=document.getElementsByTagName("input")[1].value;
+        var inputArr=document.getElementsByTagName("input");
+        var arr=inputArr[0].value.split(',');
+        var num=inputArr[1].value;
         var resArr=[];
         for(let i=0;i<arr.length;i++)
         {
-            if (arr[i]>num)
+            if (+arr[i]>+num)
                     resArr.push(arr[i]);
         }
         document.getElementById("result").innerHTML=resArr;

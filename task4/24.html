@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>24</title>
+</head>
+<body>
+<div>24. Write a JavaScript function to apply Bubble Sort algorithm.<br>
+    Note : According to wikipedia "Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that works by repeatedly stepping through the list to be sorted, comparing each pair of adjacent items and swapping them if they are in the wrong order".<br>
+    Sample array : [12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]<br>
+    Expected output : [3223, 546, 455, 345, 234, 213, 122, 98, 84, 64, 23, 12, 9, 4, 1]</div><br>
+<span>Enter array:</span><br>
+<input type="text" size=20><br>
+<input type="button" onclick="Sort()" value="Sort"><br>
+<div id="res"></div>
+<script>
+    function Sort()
+    {
+        var arr=document.getElementsByTagName("input")[0].value.split(',');
+        var tmp;
+
+        for (var i = arr.length - 1; i > 0; i--) {
+            for (var j = 0; j < i; j++) {
+                if (+arr[j] > +arr[j+1]) {
+                    tmp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = tmp;
+                }
+            }
+        }
+        document.getElementById("res").innerHTML=arr;
+    }
+</script>
+</body>
+</html>

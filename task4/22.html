@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>22</title>
+</head>
+<body>
+<div>22. Write a JavaScript function that accepts two arguments, a string and a letter and the function will count the number of occurrences of the specified letter within the string.<br>
+    Sample arguments : 'w3resource.com', 'o'<br>
+    Expected output : 2</div><br>
+<span>Enter string:</span>
+<input type="text"><br>
+<span>Enter letter:</span>
+<input type="text"><br>
+<input type="button" onclick="Count()" value="Count"><br>
+<div id="result"></div>
+<script>
+    function Count()
+    {
+        var inputElem=document.getElementsByTagName("input");
+        var str=inputElem[0].value;
+        var char=inputElem[1].value;
+        document.getElementById("result").innerHTML=str.split(char).length-1;
+    }
+</script>
+</body>
+</html>

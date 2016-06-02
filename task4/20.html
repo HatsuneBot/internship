@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>20</title>
+</head>
+<body>
+<div>20. Write a JavaScript function that generates a string id (specified length) of random characters.<br>
+    Sample character list : "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"</div>
+<span>Enter length:</span>
+<input type="number">
+<input type="button" onclick="Gen()" value="Generate"><br>
+<div id="result"></div>
+<script>
+    function Gen() {
+        var len=document.getElementsByTagName("input")[0].value;
+        var char_list="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        var result=new String();
+        for (let i=0;i<len;i++)
+        {
+            result+=char_list.charAt(Math.floor(Math.random() * char_list.length));
+        }
+        document.getElementById("result").innerHTML=result;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>23</title>
+</head>
+<body>
+<div>23. Write a JavaScript function to find the first not repeated character.<br>
+    Sample arguments : 'abacddbec'<br>
+    Expected output : 'e'</div><br>
+<span>Enter string:</span>
+<input type="text">
+<input type="button" onclick="Find()" value="Find"><br>
+<div id="res"></div>
+<script>
+    function Find()
+    {
+        var str=document.getElementsByTagName("input")[0].value;
+        var count=0;
+        for(let i=0;i<str.length;i++)
+        {
+            for (let j=0;j<str.length;j++)
+            {
+                if (str[i]===str[j])
+                        count++;
+            }
+            if (count === 1)
+            {
+                document.getElementById("res").innerHTML=str[i];
+                break;
+            }
+            else count=0;
+        }
+    }
+</script>
+</body>
+</html>
