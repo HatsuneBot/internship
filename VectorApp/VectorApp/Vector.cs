@@ -8,41 +8,37 @@ namespace VectorApp
 {
     class Vector
     {
-        public Vector(double x, double y, double z)
+        private Point start { get; set; }
+        private Point end { get; set; }
+        public Vector(Point a, Point b)
         {
-            X = x;
-            Y = y;
-            Z = z;
+            start = a;
+            end = b;
         }
-        private double X { get; set; }
-        private double Y { get; set; }
-        private double Z { get; set; }
+
         private double Length
         {
             get
             {
-                return Math.Sqrt(X * X + Y * Y + Z * Z);
+                Point tmp = new Point(end.X - start.X, end.Y - start.Y, end.Z - start.Z);
+                return Math.Sqrt(Math.Pow(tmp.X, 2) + Math.Pow(tmp.Y, 2)+ Math.Pow(tmp.Z, 2));
             }
         }
-        public static Vector operator +(Vector a, Vector b)
+        public static double operator +(Vector a, Vector b)
         {
-            return new Vector(a.X + b.X, a.Y + b.Y, a.Z + b.Z);
+            return a.Length + b.Length;
         }
-        public static Vector operator -(Vector a, Vector b)
+        public static double operator -(Vector a, Vector b)
         {
-            return new Vector(a.X - b.X, a.Y - b.Y, a.Z - b.Z);
+            return a.Length-b.Length;
         }
         public static double operator *(Vector a, Vector b)
         {
-            return (a.X * b.X + a.Y * b.Y + a.Z * b.Z);
-        }
-        public static double Cos(Vector a, Vector b)
-        {
-            return (a * b) / (a.Length * b.Length);
+            return a.Length*b.Length;
         }
         public override string ToString()
         {
-            return string.Format("({0},{1},{2})", X, Y, Z);
+            return string.Format("({0},{1})", start,end);
         }
     }
 }

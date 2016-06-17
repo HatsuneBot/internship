@@ -100,6 +100,15 @@ namespace PolynomApp
         }
 
 
+        public override bool Equals(object obj)
+        {
+            return obj.ToString()==this.ToString();
+        }
+        public override int GetHashCode()
+        {
+            return this.ToString().GetHashCode();
+        }
+
         public static bool operator ==(Polynom pFirst, Polynom pSecond)
         {
             if (pFirst._coefficients.Length != pSecond._coefficients.Length)
