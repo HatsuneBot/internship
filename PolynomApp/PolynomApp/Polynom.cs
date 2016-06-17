@@ -8,31 +8,19 @@ namespace PolynomApp
 {
     class Polynom
     {
-        private readonly double[] _coefficients;
+        private double[] _coefficients;
 
-        ///<summary>
-        ///  Создание*полинома*на*основе*коэффициентов.
-        ///</summary>
-        ///<param name = "coefficients">Коэффициенты*полинома.</param>
         public Polynom(params double[] coefficients)
         {
             _coefficients = coefficients;
         }
 
-        ///<summary>
-        ///  Получение*или*установка*значения*коэффициента*полинома.
-        ///</summary>
-        ///<param name = "n">Номер*коэффициента.</param>
-        ///<returns>Значение*коэффициента.</returns>
         public double this[int n]
         {
             get { return _coefficients[n]; }
             set { _coefficients[n] = value; }
         }
 
-        ///<summary>
-        ///  Степень*полинома.
-        ///</summary>
         public int Order
         {
             get { return _coefficients.Length; }
@@ -43,11 +31,6 @@ namespace PolynomApp
             return string.Format("Coefficients:*" + string.Join(";*", _coefficients));
         }
 
-        ///<summary>
-        ///  Быстрый*расчет*значения*полинома*по*схеме*Горнера.
-        ///</summary>
-        ///<param name = "x">Аргумент*полинома.</param>
-        ///<returns>Значение*полинома.</returns>
         public double Calculate(double x)
         {
             int n = _coefficients.Length - 1;
@@ -59,9 +42,6 @@ namespace PolynomApp
             return result;
         }
 
-        ///<summary>
-        ///  Сложение*полиномов.
-        ///</summary>
         public static Polynom operator +(Polynom pFirst, Polynom pSecond)
         {
             int itemsCount = Math.Max(pFirst._coefficients.Length, pSecond._coefficients.Length);
@@ -83,9 +63,6 @@ namespace PolynomApp
             return new Polynom(result);
         }
 
-        ///<summary>
-        ///  Вычитание*полиномов.
-        ///</summary>
         public static Polynom operator -(Polynom pFirst, Polynom pSecond)
         {
             int itemsCount = Math.Max(pFirst._coefficients.Length, pSecond._coefficients.Length);
@@ -107,9 +84,6 @@ namespace PolynomApp
             return new Polynom(result);
         }
 
-        ///<summary>
-        ///  Умножение*полиномов.
-        ///</summary>
         public static Polynom operator *(Polynom pFirst, Polynom pSecond)
         {
             int itemsCount = pFirst._coefficients.Length + pSecond._coefficients.Length - 1;
@@ -125,9 +99,7 @@ namespace PolynomApp
             return new Polynom(result);
         }
 
-        ///<summary>
-        ///  Равенство*полиномов.
-        ///</summary>
+
         public static bool operator ==(Polynom pFirst, Polynom pSecond)
         {
             if (pFirst._coefficients.Length != pSecond._coefficients.Length)
