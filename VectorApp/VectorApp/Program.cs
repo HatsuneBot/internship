@@ -35,7 +35,7 @@ namespace VectorApp
                     flag1 = true;
                     Console.WriteLine("Введите координаты первого вектора:");
                     string s = Console.ReadLine();
-                    if (string.IsNullOrEmpty(s) == true) flag = false;
+                    if (string.IsNullOrEmpty(s) == true) { flag = false; break; }
                     points1 = s.Split(separators, StringSplitOptions.RemoveEmptyEntries);
                     if (points1.Length != 6) { Console.WriteLine("Неверно введены координаты! Введите 6 значений!");continue; }
                     for (int i=0;i<points1.Length;i++)
