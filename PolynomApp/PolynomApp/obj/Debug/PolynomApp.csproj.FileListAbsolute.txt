@@ -1,6 +1,6 @@
 D:\GitHub\PolynomApp\PolynomApp\bin\Debug\PolynomApp.exe.config
 D:\GitHub\PolynomApp\PolynomApp\bin\Debug\PolynomApp.exe
 D:\GitHub\PolynomApp\PolynomApp\bin\Debug\PolynomApp.pdb
-D:\GitHub\PolynomApp\PolynomApp\obj\Debug\PolynomApp.csprojResolveAssemblyReference.cache
 D:\GitHub\PolynomApp\PolynomApp\obj\Debug\PolynomApp.exe
 D:\GitHub\PolynomApp\PolynomApp\obj\Debug\PolynomApp.pdb
+D:\GitHub\PolynomApp\PolynomApp\obj\Debug\PolynomApp.csprojResolveAssemblyReference.cache

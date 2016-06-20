@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PolynomApp
 {
-    class Polynom
+    public class Polynom
     {
         private double[] _coefficients;
 
@@ -31,16 +31,6 @@ namespace PolynomApp
             return string.Format("Coefficients:*" + string.Join(";*", _coefficients));
         }
 
-        public double Calculate(double x)
-        {
-            int n = _coefficients.Length - 1;
-            double result = _coefficients[n];
-            for (int i = n - 1; i >= 0; i--)
-            {
-                result = x * result + _coefficients[i];
-            }
-            return result;
-        }
 
         public static Polynom operator +(Polynom pFirst, Polynom pSecond)
         {
@@ -86,13 +76,15 @@ namespace PolynomApp
 
         public static Polynom operator *(Polynom pFirst, Polynom pSecond)
         {
-            int itemsCount = pFirst._coefficients.Length + pSecond._coefficients.Length - 1;
+            int itemsCount = pFirst._coefficients.Length * pSecond._coefficients.Length;
             var result = new double[itemsCount];
+            int k = 0;
             for (int i = 0; i < pFirst._coefficients.Length; i++)
             {
                 for (int j = 0; j < pSecond._coefficients.Length; j++)
                 {
-                    result[i + j] += pFirst[i] * pSecond[j];
+                    result[k] += pFirst[i] * pSecond[j];
+                    k++;
                 }
             }
 
@@ -102,11 +94,11 @@ namespace PolynomApp
 
         public override bool Equals(object obj)
         {
-            return obj.ToString()==this.ToString();
+            return obj.ToString()== ToString();
         }
         public override int GetHashCode()
         {
-            return this.ToString().GetHashCode();
+            return ToString().GetHashCode();
         }
 
         public static bool operator ==(Polynom pFirst, Polynom pSecond)
