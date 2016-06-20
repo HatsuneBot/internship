@@ -10,18 +10,19 @@ namespace VectorApp
     {
         private Point start { get; set; }
         private Point end { get; set; }
+
         public Vector(Point a, Point b)
         {
             start = a;
             end = b;
         }
 
-        private double Length
+        public double Length
         {
             get
             {
-                Point tmp = new Point(end.X - start.X, end.Y - start.Y, end.Z - start.Z);
-                return Math.Sqrt(Math.Pow(tmp.X, 2) + Math.Pow(tmp.Y, 2)+ Math.Pow(tmp.Z, 2));
+                Point dif = end - start;
+                return Math.Sqrt(dif.FindPow);
             }
         }
         public static double operator +(Vector a, Vector b)

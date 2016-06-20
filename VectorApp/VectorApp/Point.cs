@@ -8,15 +8,28 @@ namespace VectorApp
 {
     class Point
     {
-        public int X { get; set; }
-        public int Y { get; set; }
-        public int Z { get; set; }
+        private int X { get; set; }
+        private int Y { get; set; }
+        private int Z { get; set; }
+
         public Point (int a, int b, int c)
         {
             X = a;
             Y = b;
             Z = c;
         }
+
+        public static Point operator -(Point a, Point b)
+        {
+            return new Point(a.X - b.X, a.Y - b.Y, a.Z - b.Z);
+        }
+
+        public double FindPow
+        {
+            get
+            { return Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2); }
+        }
+
         public override string ToString()
         {
             return string.Format("({0},{1},{2})", X,Y,Z);
