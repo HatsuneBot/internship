@@ -4,7 +4,7 @@ using VectorApp;
 namespace VectorAppUnitTestProject
 {
     [TestClass]
-    public class UnitTest
+    public class VectorUnitTest
     {
         [TestMethod]
         public void Sum_v1_v2()
