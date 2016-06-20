@@ -8,20 +8,20 @@ namespace VectorApp
 {
     class Vector
     {
-        private Point start { get; set; }
-        private Point end { get; set; }
+        private Point startPoint { get; set; }
+        private Point endPoint { get; set; }
 
         public Vector(Point a, Point b)
         {
-            start = a;
-            end = b;
+            startPoint = a;
+            endPoint = b;
         }
 
         public double Length
         {
             get
             {
-                Point dif = end - start;
+                Point dif = endPoint - startPoint;
                 return Math.Sqrt(dif.FindPow);
             }
         }
@@ -39,7 +39,7 @@ namespace VectorApp
         }
         public override string ToString()
         {
-            return string.Format("({0},{1})", start,end);
+            return string.Format("({0},{1})", startPoint,endPoint);
         }
     }
 }
