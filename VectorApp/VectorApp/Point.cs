@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VectorApp
 {
-    class Point
+    public class Point
     {
         private int X { get; set; }
         private int Y { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VectorApp
 {
-    class Vector
+    public class Vector
     {
         private Point startPoint { get; set; }
         private Point endPoint { get; set; }
