@@ -9,23 +9,11 @@ namespace VectorApp
     class Program
     {
         static void Main(string[] args)
-        {
-            Vector v1 = new Vector(new Point (2,0,2),new Point(0,1,0));
-            Vector v2 = new Vector(new Point (0,1,0),new Point(2,0,2));
-            double sum = v1 + v2;
-            double dif = v1 - v2;
-            double mult = v1 * v2;
-
-            Console.WriteLine(v1);
-            Console.WriteLine(v2);
-            Console.WriteLine("Сумма векторов - {0}",sum);
-            Console.WriteLine("Разность векторов - {0}",dif);
-            Console.WriteLine("Произведение векторов - {0}", mult);
-            Console.ReadLine();
-
-            
+        {         
             do
             {
+                Vector v1 = new Vector();
+                Vector v2 = new Vector();
                 string[] separators = { ",", " ", "\n" };
                 bool flag = true, flag1;
                 int tmp;
@@ -69,9 +57,9 @@ namespace VectorApp
                 
                 
 
-                    sum = v1 + v2;
-                    dif = v1 - v2;
-                    mult = v1 * v2;
+                    double sum = v1 + v2;
+                    double dif = v1 - v2;
+                    double mult = v1 * v2;
 
                     Console.WriteLine(v1);
                     Console.WriteLine(v2);

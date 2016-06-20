@@ -11,6 +11,8 @@ namespace VectorApp
         private Point startPoint { get; set; }
         private Point endPoint { get; set; }
 
+        public Vector() { }
+
         public Vector(Point a, Point b)
         {
             startPoint = a;
