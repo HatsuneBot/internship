@@ -1,0 +1,16 @@
+﻿<Window x:Class="Task2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task2"
+        mc:Ignorable="d"
+        Title="Процент прочитанного текста" Height="350" Width="525">
+    <Grid>
+        <Button x:Name="FileOpen" Content="Открыть" Click="FileOpen_Click" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="output" HorizontalAlignment="Left" Height="298" Margin="90,11,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="417" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" ScrollViewer.ScrollChanged="output_ScrollChanged" Grid.ColumnSpan="2"/>
+        <Label x:Name="label" Content="Прочитано:" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="label1" Content="" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>
