@@ -33,45 +33,40 @@ namespace Task
 
         public static Matrix operator +(Matrix a, Matrix b)
         {
-            Matrix sum = new Matrix(a.row, a.column);
+           
             try
             {
-                if (a.row != b.row && a.column != b.column)
+                if (a.row != b.row || a.column != b.column)
                 {
-                    Exception ex = new Exception("Не совпадают размеры матрицы!");
-                    throw ex;
+                    throw new Exception("Не совпадают размеры матрицы!");                    
                 }
-                //Matrix sum = new Matrix(a.row, a.column);
-                for (int i = 0; i < a.row; i++)
-                    for (int j = 0; j < a.column; j++)
-                        sum[i, j] = a[i, j] + b[i, j];
-                return sum;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                return null;
             }
 
-            //Matrix sum = new Matrix(a.row, a.column);
-            //for (int i = 0; i < a.row; i++)
-            //    for (int j = 0; j < a.column; j++)
-            //        sum[i, j] = a[i, j] + b[i, j];
-            //return sum;
+            Matrix sum = new Matrix(a.row, a.column);
+            for (int i = 0; i < a.row; i++)
+                for (int j = 0; j < a.column; j++)
+                    sum[i, j] = a[i, j] + b[i, j];
+            return sum;
         }
 
         public static Matrix operator -(Matrix a, Matrix b)
         {
             try
             {
-                if (a.row != b.row && a.column != b.column)
+                if (a.row != b.row || a.column != b.column)
                 {
-                    Exception ex = new Exception("Не совпадают размеры матрицы!");
-                    throw ex;
+                    throw new Exception("Не совпадают размеры матрицы!");
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                return null;
             }
 
             Matrix dif = new Matrix(a.row, a.column);
@@ -87,13 +82,13 @@ namespace Task
             {
                 if (a.column != b.row)
                 {
-                    Exception ex = new Exception("Не совпадают размеры матрицы!");
-                    throw ex;
+                    throw new Exception("Не совпадают размеры матрицы!");
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                return null;
             }
 
             Matrix mult = new Matrix(a.row, b.column);
@@ -103,7 +98,7 @@ namespace Task
                 {
                     sum = 0;
                     for (int k = 0; k < a.column; k++)
-                        sum += a[j, k] * b[k, j];
+                        sum += a[i, k] * b[k, j];
                     mult[i, j] = sum;
                 }
             return mult;
@@ -111,9 +106,9 @@ namespace Task
 
         public void PrintMatrix()
         {
-            for (int i = 0; i < this.row; i++)
+            for (int i = 0; i < row; i++)
             {
-                for (int j = 0; j < this.column; j++)
+                for (int j = 0; j < column; j++)
                     Console.Write("{0}  ", this[i, j]);
                 Console.Write("\n");
             }
@@ -133,15 +128,15 @@ namespace Task
         {
             try
             {
-                if (a.row != b.row && a.column != b.column)
+                if (a.row != b.row || a.column != b.column)
                 {
-                    Exception ex = new Exception("Не совпадают размеры матрицы!");
-                    throw ex;
+                    throw new Exception("Не совпадают размеры матрицы!");
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                return true;
             }
             for (int i = 0; i < a.row; i++)
                 for (int j = 0; j < a.column; j++)

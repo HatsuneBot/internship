@@ -37,11 +37,17 @@ namespace Task
                 b.PrintMatrix();
 
                 Console.WriteLine("Сумма матриц:");
-                (a + b).PrintMatrix();
+                try
+                { (a + b).PrintMatrix(); }
+                catch (NullReferenceException) { Console.WriteLine("Невозможно отобразить результат!"); }
                 Console.WriteLine("Разность матриц:");
-                (a - b).PrintMatrix();
+                try
+                { (a - b).PrintMatrix(); }
+                catch (NullReferenceException) { Console.WriteLine("Невозможно отобразить результат!"); }
                 Console.WriteLine("Произведение матриц:");
-                (a * b).PrintMatrix();
+                try
+                { (a * b).PrintMatrix(); }
+                catch (NullReferenceException) { Console.WriteLine("Невозможно отобразить результат!"); }
             }
         }
     }
