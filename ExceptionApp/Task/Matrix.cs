@@ -136,7 +136,6 @@ namespace Task
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return true;
             }
             for (int i = 0; i < a.row; i++)
                 for (int j = 0; j < a.column; j++)

@@ -28,7 +28,7 @@ namespace EditApp.Controllers
         public ActionResult UpdateContent(string fileContent, string fileName)
         {
             System.IO.File.WriteAllText(Server.MapPath("~/Files/" + fileName), fileContent);
-            return Json(new { success = true, fileName }, JsonRequestBehavior.AllowGet);
+            return Json(new { success = true, fileName });
         }
 
         public FileResult Download(string fileName)

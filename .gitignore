@@ -26,3 +26,26 @@
 /ExceptionApp/Task/bin/Debug
 /ExceptionApp/Task/obj/Debug
 
+/ClockApp/ClockApp/App_Start
+/ClockApp/ClockApp/bin
+/ClockApp/ClockApp/Content
+/ClockApp/ClockApp/fonts
+/ClockApp/ClockApp/obj/Debug
+/ClockApp/ClockApp/Properties
+/ClockApp/ClockApp/Scripts/_references.js
+/ClockApp/ClockApp/Scripts/respond.min.js
+/ClockApp/ClockApp/Scripts/respond.js
+/ClockApp/ClockApp/Scripts/modernizr-2.6.2.js
+/ClockApp/ClockApp/Scripts/jquery.validate.unobtrusive.min.js
+/ClockApp/ClockApp/Scripts/jquery.validate.unobtrusive.js
+/ClockApp/ClockApp/Scripts/jquery.validate.min.js
+/ClockApp/ClockApp/Scripts/jquery.validate.js
+/ClockApp/ClockApp/Scripts/jquery.validate-vsdoc.js
+/ClockApp/ClockApp/Scripts/jquery-1.10.2.min.map
+/ClockApp/ClockApp/Scripts/jquery-1.10.2.min.js
+/ClockApp/ClockApp/Scripts/jquery-1.10.2.js
+/ClockApp/ClockApp/Scripts/jquery-1.10.2.intellisense.js
+/ClockApp/ClockApp/Scripts/bootstrap.min.js
+/ClockApp/ClockApp/Scripts/bootstrap.js
+/ClockApp/ClockApp/Scripts/ai.0.22.9-build00167.min.js
+/ClockApp/ClockApp/Scripts/ai.0.22.9-build00167.js

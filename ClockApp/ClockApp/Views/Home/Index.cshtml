@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<script src="~/Scripts/TimeScript.js"></script>
+
+
+<div class="container">
+    <div></div><br />
+    <label>Введите время:</label><input type="text"><br />
+    <label>Введите сообщение:</label><input type="text" /><br />
+    <button id="submit" onclick="Send()">Отправить</button><br />
+
+    <br />
+    <br />
+    <div id="output"></div>
+</div>
+<script>
+    function Send() {
+        document.getElementById('output').innerHTML = null;
+        var input = document.getElementsByTagName('input');
+        var time = parseInt(input[0].value);
+        if (isNaN(time) == true) alert("Неверно введено время! Введите целое число!");
+        var actionURL = '@Url.Action("SendMessage", "Home")';
+        $.ajax(actionURL, {
+            data: { time: time, message: input[1].value },
+            success: function (result) {
+                if (result.success) {
+                    document.getElementById('output').innerHTML = result.result;
+                }
+            },
+            error: function (xhr, status, p3) {
+                alert(xhr.responseText);
+            }
+        });
+    };
+</script>
