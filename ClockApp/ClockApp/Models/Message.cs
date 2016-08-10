@@ -14,7 +14,7 @@ namespace ClockApp.Controllers
         public string NewMessage (int time, string message)
         {
             onSleep(time);
-            string newMessage = "Прошло " + time + " секунд.\n" + message;
+            string newMessage = "Прошло " + time + " секунд. " + message;
             return newMessage;
         }
     }

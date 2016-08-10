@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<table>
+    <tr><label><h1>Введите данные о студенте:</h1></label></tr>
+    <tr><td><label>ФИО:</label></td><td><input type="text" /></td></tr>
+    <tr><td><label>Название теста:</label></td><td><input type="text" /></td></tr>
+    <tr><td><label>Дата прохождения:</label></td><td><input type="text" /></td></tr>
+    <tr><td><label>Оценка:</label></td><td><input type="text" /></td></tr>
+</table><br />
+<button id="submit" onclick="Send()">Отправить</button><br />
+<br />
+<table id="output">
+    <tbody>
+        <tr>
+            <td style="width:40%"><label>ФИО</label></td>
+            <td style="width:30%"><label>Название теста</label></td>
+            <td style="width:15%"><label>Дата прохождения</label></td>
+            <td style="width:15%"><label>Оценка</label></td>
+        </tr>
+    </tbody>
+</table>
+<script>
+    function Send() {
+
+        var input = document.getElementsByTagName('input');        
+        AddRow(input[0].value, input[1].value, input[2].value, input[3].value)
+
+        var actionURL = '@Url.Action("AddStudent", "Home")';
+
+        $.ajax(actionURL, {
+            data: { name: input[0].value, testName: input[1].value, date: input[2].value, rating: input[3].value, },
+            success: function (result) {
+                if (result.success) {
+                    alert("Элемент успешно добавлен в дерево!");
+                }
+            },
+            error: function (xhr, status, p3) {
+                alert(xhr.responseText);
+            }
+        });
+
+        document.getElementsByTagName('input')[0].value = null;
+        document.getElementsByTagName('input')[1].value = null;
+        document.getElementsByTagName('input')[2].value = null;
+        document.getElementsByTagName('input')[3].value = null;
+    }
+
+    function AddRow(name, testName, date, rating) {
+        var tbody = document.getElementById('output').getElementsByTagName("TBODY")[0];
+        var row = document.createElement("TR")
+        var td1 = document.createElement("TD")
+        td1.appendChild(document.createTextNode(name))
+        var td2 = document.createElement("TD")
+        td2.appendChild(document.createTextNode(testName))
+        var td3 = document.createElement("TD")
+        td3.appendChild(document.createTextNode(date))
+        var td4 = document.createElement("TD")
+        td4.appendChild(document.createTextNode(rating))
+        row.appendChild(td1);
+        row.appendChild(td2);
+        row.appendChild(td3);
+        row.appendChild(td4);
+        tbody.appendChild(row);
+    }
+</script>
